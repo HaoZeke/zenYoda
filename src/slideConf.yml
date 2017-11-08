@@ -1,0 +1,24 @@
+---
+author:
+- Lincoln Mullen
+subtitle: Doing DH Institute
+title: Spatial Temp History
+titlepage-note: |
+  This is a the note that goes on the title page. This talk is to be 
+  given at Doing DH.
+institute: George Mason University
+fontsize: 12pt
+date: 2017-11-5
+subject: "CNT"
+tags: [Markdown, Example]
+# HTML Stuff
+revealjs-url: http://lab.hakim.se/reveal-js
+# TeX Stuff
+header-includes:
+    - \numberwithin{figure}{section}
+    - \numberwithin{equation}{section}
+    - \numberwithin{table}{section}
+    - \usepackage{FiraSans}
+# Beamer Stuff
+theme: metropolis
+...

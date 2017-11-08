@@ -1,0 +1,35 @@
+# The build tool.
+# Copyright (C) 2017  Rohit Goswami
+
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
+
+# Intro
+
+## HTML
+: rootConf.yml README.md |> pandoc -t html --standalone -f markdown %f -o %o --highlight-style kate -V theme=black --slide-level 2 |> doc/html/index.html
+
+# The presentations
+
+## HTML
+: src/slideConf.yml src/md/*.md |> pandoc -t revealjs --standalone -f markdown %f -o %o --highlight-style kate -V theme=black --slide-level 2 |> dist/testReveal.html
+: src/slideConf.yml src/md/*.md |> pandoc -t slidy --standalone -f markdown %f -o %o --highlight-style kate --slide-level 2 |> dist/testSlidy.html
+: src/slideConf.yml src/md/*.md |> pandoc -t slideous --standalone -f markdown %f -o %o --highlight-style kate --slide-level 2 |> dist/testSlideous.html
+: src/slideConf.yml src/md/*.md |> pandoc -t dzslides --standalone -f markdown %f -o %o --highlight-style kate --slide-level 2 |> dist/testDZ.html
+: src/slideConf.yml src/md/*.md |> pandoc -t s5 --standalone -f markdown %f -o %o --highlight-style kate |> dist/testS5.html
+
+## TeX
+: src/slideConf.yml src/md/*.md |> pandoc -t beamer --standalone -f markdown %f -o %o --highlight-style kate --slide-level 2 |> src/tex/testPres.tex
+: src/tex/testPres.tex |> latexmk %f -r src/tex/.latexmkrc -outdir=dist -silent && latexmk -c %f -r src/tex/.latexmkrc -outdir=dist -silent |> dist/%B.pdf
