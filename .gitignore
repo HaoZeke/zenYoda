@@ -222,3 +222,7 @@ TSWLatexianTemp*
 
 # exclude the generated TeX files
 src/tex/*.tex
+
+# temp
+dist/
+doc/
