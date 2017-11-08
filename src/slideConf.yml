@@ -1,12 +1,12 @@
 ---
 author:
-- Lincoln Mullen
-subtitle: Doing DH Institute
-title: Spatial Temp History
+- Rohit Goswami
+title: Zen Yoda
+subtitle: Pandoc Pesentations for Turtles
 titlepage-note: |
   This is a the note that goes on the title page. This talk is to be 
   given at Doing DH.
-institute: George Mason University
+#institute: George Mason University
 fontsize: 12pt
 date: 2017-11-5
 subject: "CNT"

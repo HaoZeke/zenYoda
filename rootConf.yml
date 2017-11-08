@@ -16,4 +16,10 @@ header-includes:
     - \numberwithin{equation}{section}
     - \numberwithin{table}{section}
     - \usepackage{FiraSans}
+# Eisvogel Stuff
+titlepage: true
+titlepage-color: 06386e
+titlepage-text-color: ffffff
+titlepage-rule-color: ffffff
+titlepage-rule-height: 1
 ...
