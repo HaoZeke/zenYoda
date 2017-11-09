@@ -15,28 +15,56 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
-# Path additions
-export PATH="$HOME/.local/bin:$PATH"
-
-
+# Variables
+# Pandoc location
+pandocBinary=$HOME/.local/bin/pandoc
+## Output Directories
+### Beamer
+beamerOut=dist/pres/beamer
+### html
+htmlPresOut=dist/pres/html
+### TeX
+texOut=src/tex
+# Presentation inputs
+&presConf=src/slideConf.yml 
+&presInp=src/md/slides
+# Common Parameters
+paraPres=--standalone -f markdown --highlight-style kate --slide-level 2
+htmlParaPres=--mathjax $(paraPres) 
 # Intro
 
 ## HTML
-: rootConf.yml README.md |> $HOME/.local/bin/pandoc -t html5 --standalone -f markdown %f -o %o --highlight-style kate --slide-level 2 |> doc/html/index.html
+: rootConf.yml README.md |> $(pandocBinary) -t html5 --standalone -f markdown %f -o %o --highlight-style kate --slide-level 2 |> doc/html/index.html
 
 ## TeX
-# : rootConf.yml README.md |> $HOME/.local/bin/pandoc --pdf-engine=xelatex --from markdown --template eisvogel -N --filter pandoc-eqnos --filter pandoc-fignos -f markdown %f -o %o --highlight-style kate |> src/tex/docu.tex
+# : rootConf.yml README.md |> $(pandocBinary) --pdf-engine=xelatex --from markdown --template eisvogel -N --filter pandoc-eqnos --filter pandoc-fignos -f markdown %f -o %o --highlight-style kate |> src/tex/docu.tex
 # : src/tex/docu.tex |> latexmk -f %f -r src/tex/.latexmkrc -outdir=doc -silent && latexmk -c %f -r src/tex/.latexmkrc -outdir=doc -silent |> doc/%B.pdf
 
 # The presentations
 
 ## HTML
-: src/slideConf.yml src/md/*.md |> $HOME/.local/bin/pandoc -t revealjs --mathjax --standalone -f markdown %f -o %o --highlight-style kate -V theme=black --slide-level 2 |> dist/testReveal.html
-: src/slideConf.yml src/md/*.md |> $HOME/.local/bin/pandoc -t slidy --mathjax --standalone -f markdown %f -o %o --highlight-style kate --slide-level 2 |> dist/testSlidy.html
-: src/slideConf.yml src/md/*.md |> $HOME/.local/bin/pandoc -t slideous --mathjax --standalone -f markdown %f -o %o --highlight-style kate --slide-level 2 |> dist/testSlideous.html
-: src/slideConf.yml src/md/*.md |> $HOME/.local/bin/pandoc -t dzslides --mathjax --standalone -f markdown %f -o %o --highlight-style kate --slide-level 2 |> dist/testDZ.html
-: src/slideConf.yml src/md/*.md |> $HOME/.local/bin/pandoc -t s5 --mathjax --standalone -f markdown %f -o %o --highlight-style kate |> dist/testS5.html
+: &(presConf) &(presInp)/*.md |> \
+  $(pandocBinary) -t revealjs $(htmlParaPres) %f -o %o \
+  -V theme=black \
+  |> $(htmlPresOut)/testReveal.html
+: &(presConf) &(presInp)/*.md |> \
+  $(pandocBinary) -t slidy $(htmlParaPres) %f -o %o\
+  |> $(htmlPresOut)/testSlidy.html
+: &(presConf) &(presInp)/*.md |> \
+  $(pandocBinary) -t slideous $(htmlParaPres) %f -o %o\
+  |> $(htmlPresOut)/testSlideous.html
+: &(presConf) &(presInp)/*.md |> \
+  $(pandocBinary) -t dzslides $(htmlParaPres) %f -o %o\
+  |> $(htmlPresOut)/testDZ.html
+: &(presConf) &(presInp)/*.md |> \
+  $(pandocBinary) -t s5 $(htmlParaPres) %f -o %o\
+  |> $(htmlPresOut)/testS5.html
 
 ## TeX
-: src/slideConf.yml src/md/*.md |> $HOME/.local/bin/pandoc -t beamer --standalone -f markdown %f -o %o --highlight-style kate --slide-level 2 |> src/tex/testPres.tex
-: src/tex/testPres.tex |> latexmk %f -r src/tex/.latexmkrc -outdir=dist -silent && latexmk -c %f -r src/tex/.latexmkrc -outdir=dist -silent |> dist/%B.pdf
+: &(presConf) &(presInp)/*.md |> \
+  $(pandocBinary) -t beamer $(paraPres) %f -o %o \
+  |> $(texOut)/testPres.tex
+: $(texOut)/testPres.tex |> \
+  latexmk %f -r src/tex/.latexmkrc -outdir=$(beamerOut) -silent && \
+  latexmk -c %f -r src/tex/.latexmkrc -outdir=$(beamerOut) -silent \
+  |> $(beamerOut)/%B.pdf
