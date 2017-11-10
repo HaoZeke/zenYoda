@@ -31,7 +31,7 @@ texOut=src/tex
 # Common Parameters
 paraPres=--standalone -f markdown --highlight-style kate --slide-level 2
 htmlParaPres=--mathjax $(paraPres)
-htmlParaDoc= $(htmlParaPres) --filter src/filters/paru-insert.rb
+htmlParaDoc= $(htmlParaPres) --filter src/filters/panfluteInc.py
 
 
 ## TeX
@@ -79,11 +79,27 @@ htmlParaDoc= $(htmlParaPres) --filter src/filters/paru-insert.rb
 : src/js/sideNav.js |> mkdir -p docs/js && cp %f docs/js/main.js |> docs/js/main.js
 
 ### html
+#### Copy Dist
 : $(beamerOut)/*.pdf $(htmlPresOut)/*.html \
 |> cp -r dist/pres docs/ |> docs/pres/html/testReveal.html docs/pres/html/testSlidy.html \
 docs/pres/html/testSlideous.html docs/pres/html/testDZ.html docs/pres/html/testS5.html \
 docs/pres/beamer/testPres.pdf
+
+#### Make Site
 : src/docuConf.yml src/md/docu/docu.md \
 | docs/css/zenYoda.css docs/js/main.js \
 |> $(pandocBinary) -t html5 $(htmlParaDoc) %f -o %o \
 |> docs/index.html
+
+#### Deploy Site
+# export DEPLOY
+# ifeq (${DEPLOY},y)
+# : docs/index.html \
+# | docs/pres/html/*.html docs/css/*.css docs/js/*.js docs/pres/beamer/*.pdf \
+# |> surge docs zenyoda.surge.sh |>
+# endif
+
+# export FOO
+# ifeq (${FOO},y)
+# : |> echo myFOO=$(FOO) envFOO=${FOO} > %o |> foo.txt
+# endif
