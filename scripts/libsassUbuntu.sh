@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 # Based on https://github.com/sass/libsass/wiki/Building-with-autotools
+# From https://gist.github.com/edouard-lopez/503d40a5c1a49cf8ae87
 
 # Install dependencies
 apt-get install automake libtool 

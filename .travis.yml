@@ -1,6 +1,6 @@
 sudo: required
 dist: trusty
-language: shell
+language: node
 before_install:
   - sudo apt-add-repository 'deb http://ppa.launchpad.net/anatol/tup/ubuntu precise main'
   - sudo apt-get update 
