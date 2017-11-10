@@ -32,5 +32,5 @@ make -C libsass -j5
 sudo make -C libsass -j5 install
 git clone https://github.com/sass/sassc.git
 . libsass/sassc/script/bootstrap
-make -C sassc -j4
-sudo PREFIX="/usr" make -C sassc install
+make -C libsass/sassc -j4
+sudo PREFIX="/usr" make -C libsass/sassc install
