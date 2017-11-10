@@ -1,5 +1,6 @@
 //colors
 $color_jungle_green_approx: #1ca086;
+$mThemeYellow:rgba(235, 129, 27, .6); 
 $black_59: hsla(0,0%,0%,0.59);
 $yellow: #ff0;
 $black: #000;
@@ -112,11 +113,11 @@ template {
 }
 a {
 	background-color: transparent;
-	color: $color_jungle_green_approx;
+	color: $mThemeYellow;
 	text-decoration: none;
 	//Instead of the line below you could use @include text-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
 	text-shadow: .03em 0 $white,-.03em 0 $white,0 .03em $white,0 -.03em $white,.06em 0 $white,-.06em 0 $white,.09em 0 $white,-.09em 0 $white,.12em 0 $white,-.12em 0 $white,.15em 0 $white,-.15em 0 $white;
-	background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 1px, $color_jungle_green_approx 1px, $color_jungle_green_approx 2px, rgba(0, 0, 0, 0) 2px);
+	background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 1px, $mThemeYellow 1px, $mThemeYellow 2px, rgba(0, 0, 0, 0) 2px);
 	&:active {
 		outline-width: 0;
 		//Instead of the line below you could use @include text-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
@@ -585,7 +586,7 @@ blockquote {
 	margin-bottom: 1.45rem;
 	font-size: 1.1487rem;
 	line-height: 1.45rem;
-	border-left: 0.54375rem solid $color_jungle_green_approx;
+	border-left: 0.54375rem solid $mThemeYellow;
 	color: $black_65;
 	font-style: italic;
 	cite {
@@ -723,7 +724,7 @@ tt {
 		line-height: 1.45em;
 	}
 	blockquote {
-		border-left: 0.27187rem solid $color_jungle_green_approx;
+		border-left: 0.27187rem solid $mThemeYellow;
 		color: $black_59;
 		padding-left: 0.81563rem;
 		font-style: italic;

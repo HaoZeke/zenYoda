@@ -99,10 +99,10 @@ template {
 
 a {
   background-color: transparent;
-  color: #1ca086;
+  color: #EB811B;
   text-decoration: none;
   text-shadow: 0.03em 0 #fff, -0.03em 0 #fff, 0 0.03em #fff, 0 -0.03em #fff, 0.06em 0 #fff, -0.06em 0 #fff, 0.09em 0 #fff, -0.09em 0 #fff, 0.12em 0 #fff, -0.12em 0 #fff, 0.15em 0 #fff, -0.15em 0 #fff;
-  background-image: linear-gradient(to top, transparent, transparent 1px, #1ca086 1px, #1ca086 2px, transparent 2px); }
+  background-image: linear-gradient(to top, transparent, transparent 1px, #EB811B 1px, #EB811B 2px, transparent 2px); }
   a:active {
     outline-width: 0;
     text-shadow: none;
@@ -540,7 +540,7 @@ blockquote {
   margin-bottom: 1.45rem;
   font-size: 1.1487rem;
   line-height: 1.45rem;
-  border-left: 0.54375rem solid #1ca086;
+  border-left: 0.54375rem solid #EB811B;
   color: rgba(0, 0, 0, 0.65);
   font-style: italic; }
   blockquote cite {
@@ -665,7 +665,7 @@ tt {
     font-size: 106.25%;
     line-height: 1.45em; }
   blockquote {
-    border-left: 0.27187rem solid #1ca086;
+    border-left: 0.27187rem solid #EB811B;
     color: rgba(0, 0, 0, 0.59);
     padding-left: 0.81563rem;
     font-style: italic;
@@ -690,7 +690,7 @@ svg:not(:root) {
 
 body {
   background-color: #fafafa;
-  color: #33474b;
+  color: #23373B;
   text-rendering: optimizeLegibility; }
 
 @supports not (display: grid) {
@@ -757,7 +757,7 @@ body {
       padding: .6em;
       font-size: 1.2em; }
   .menu a {
-    color: white;
+    color: black;
     text-shadow: none;
     background-image: none; }
     .menu a:hover {
@@ -766,7 +766,7 @@ body {
     display: none; }
 
 #toggle {
-  background-color: #6fa9a8;
+  background-color: #EB811B;
   height: 100%;
   transition: all .7s ease;
   transition: all .3s; }

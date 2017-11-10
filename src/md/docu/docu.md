@@ -16,7 +16,7 @@
 ### Pandoc For Turtles
 ::::
 
-A tup driven pandoc based presentation engine.
+A [tup](http://gittup.org/tup/) driven pandoc based presentation engine.
 
 # Use Cases
 
