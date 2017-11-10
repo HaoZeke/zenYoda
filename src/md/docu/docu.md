@@ -31,10 +31,10 @@ This may be viewed [here](pres/html/testReveal.html)
 [Source](paulrouget.com/dzslides/)
 This may be viewed [here](pres/html/testDZ.html)
 
-### S5
+<!-- ### S5
 Pandoc supports the [S5 slide show system](https://meyerweb.com/eric/tools/s5/).
 This may be viewed [here](pres/html/testS5.html)
-
+ -->
 ### Slidy
 Pandoc also supports the [original Slidy](https://www.w3.org/Talks/Tools/Slidy2/Overview.html#(1)).
 This may be viewed [here](pres/html/testSlidy.html)
