@@ -1,7 +1,7 @@
 // Sass Variables
 // $colorBackground: #27133f; (set by typography)
 $colorBackground: #fafafa;
-$colorText: #33474b;
+$colorText: #23373B;
 $fontSysUI: system-ui,
 'Segoe UI',
 Roboto,
@@ -66,7 +66,7 @@ body {
   transition: all 1s;
 
   .showMenu {
-    background-color: darken($color_half_baked_approx, 10%);
+    background-color: darken($colorText, 10%);
   }
 }
 
@@ -115,11 +115,11 @@ body {
   }
 
   a {
-   color: white;
+   color: black;
    text-shadow: none;
    background-image: none;
    &:hover {
-    background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 1px, $color_half_baked_approx 1px, $color_half_baked_approx 2px, rgba(0, 0, 0, 0) 2px); 
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 1px, $colorText 1px, $colorText 2px, rgba(0, 0, 0, 0) 2px); 
    }
   }
   &.closed {
@@ -128,7 +128,7 @@ body {
 }
 
 #toggle {
-  background-color: darken($color_shadow_green_approx, 10%);
+  background-color: $mThemeYellow;
   height: 100%;
 
   &:hover {

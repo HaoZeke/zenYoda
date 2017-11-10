@@ -1,4 +1,4 @@
-::paru::insert src/md/docu/head.md
+$include src/md/docu/head.md
 
 :::: {.mainGrid .page}
 
@@ -6,7 +6,7 @@
 # zenYoda
 ::::
 
-::paru::insert src/md/docu/nav.md
+$include src/md/docu/nav.md
 
 <main class="gridBody">
 
@@ -43,7 +43,7 @@ This may be viewed [here](pres/html/testSlidy.html)
 **zenYoda** produces metropolis themed pdf presentations as seen [here](pres/beamer/testPres.pdf) .
 </main>
 
-::paru::insert src/md/docu/footer.md
+$include src/md/docu/footer.md
 
 <!-- Ending page and mainGrid -->
 ::::

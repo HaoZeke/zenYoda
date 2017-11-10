@@ -721,7 +721,7 @@ body {
   grid-row: 2 / 4;
   transition: all 1s; }
   .gridMenu .showMenu {
-    background-color: #63adc2; }
+    background-color: #10191b; }
 
 .gridBody {
   align-self: center;
@@ -761,7 +761,7 @@ body {
     text-shadow: none;
     background-image: none; }
     .menu a:hover {
-      background-image: linear-gradient(to top, transparent, transparent 1px, #88c0d0 1px, #88c0d0 2px, transparent 2px); }
+      background-image: linear-gradient(to top, transparent, transparent 1px, #23373B 1px, #23373B 2px, transparent 2px); }
   .menu.closed {
     display: none; }
 
