@@ -73,7 +73,7 @@ htmlParaDoc= $(htmlParaPres) --filter src/filters/panfluteInc.py --filter src/fi
 ## html
 
 ### css
-: src/scss/main.scss |> sassc %f %o |> docs/css/zenYoda.css
+: src/scss/main.scss |> node-sass %f %o |> docs/css/zenYoda.css
 
 ### JS
 : src/js/sideNav.js |> mkdir -p docs/js && cp %f docs/js/main.js |> docs/js/main.js
