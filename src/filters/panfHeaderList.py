@@ -38,7 +38,6 @@ def action(elem, doc):
         plain = stringify(elem)
         item = Link(*elem.content,url="#"+stringify(elem))
         doc.hLinks.append(item)
-        return []
 
 
 def finalize(doc):

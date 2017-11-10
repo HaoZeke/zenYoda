@@ -2,9 +2,9 @@ $include src/md/docu/head.md
 
 :::: {.mainGrid .page}
 
-<div class="gridHead headContent">
-<h1 id="zenyoda">zenYoda</h1>
-</div>
+:::: {.gridHead .headContent}
+# zenYoda
+::::
 
 $include src/md/docu/nav.md
 
