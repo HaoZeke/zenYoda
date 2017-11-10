@@ -11,10 +11,7 @@
 :::: {.menu .closed}
 :::: {.navList}
 :::: {.navItem}
-[Home](#)
-::::
-:::: {.navItem}
-[Presentations](#presentations)
+[Home](/)
 ::::
 
 $hLinks
