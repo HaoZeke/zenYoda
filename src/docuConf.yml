@@ -1,15 +1,14 @@
 ---
-author:
-- Rohit Goswami
-title: Zen Yoda
-subtitle: Pandoc Pesentations for Turtles
-fontsize: 16pt
-date: 2017-11-5
-subject: "Presentations"
-tags: [Markdown, Example]
+# author:
+# - Rohit Goswami
+pagetitle: Zen Yoda
+# subtitle: Pandoc Pesentations for Turtles
+# fontsize: 16pt
+# date: 2017-11-5
+# subject: "Presentations"
+# tags: [Markdown, Example]
 # HTML Stuff
-css: https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css
-css: https://unpkg.com/sakura.css/css/sakura.css
+css: css/zenYoda.css
 # TeX Stuff
 header-includes:
     - \numberwithin{figure}{section}
