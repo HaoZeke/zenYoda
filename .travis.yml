@@ -3,7 +3,7 @@ dist: trusty
 before_install:
   - sudo apt-add-repository 'deb http://ppa.launchpad.net/anatol/tup/ubuntu precise main'
   - sudo apt-get update 
-  - sudo apt-get install -qq pkg-config fuse latexmk texlive-full tup wget python3 python3-pip git biber
+  - sudo apt-get install --allow-unauthenticated -y -qq pkg-config fuse latexmk texlive-full tup wget python3 python3-pip git biber
   - wget https://github.com/jgm/pandoc/releases/download/2.0.1.1/pandoc-2.0.1.1-1-amd64.deb -o pand2.deb
   - sudo dpkg -i pand2.deb
   - bash scripts/libsassUbuntu.sh
