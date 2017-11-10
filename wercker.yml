@@ -4,7 +4,7 @@ build:
     steps:
       - script:
           name: get system packages
-          code: pacman -S yarn tup pandoc pandoc-citeproc sassc python 
+          code: pacman --noconfirm -S yarn tup pandoc pandoc-citeproc sassc 
       - script:
           name: get python packages
           code: pip install --user panflute
