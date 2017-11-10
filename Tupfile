@@ -30,15 +30,13 @@ texOut=src/tex
 &presInp=src/md/slides
 # Common Parameters
 paraPres=--standalone -f markdown --highlight-style kate --slide-level 2
-htmlParaPres=--mathjax $(paraPres) 
-# Intro
+htmlParaPres=--mathjax $(paraPres)
+htmlParaDoc= $(htmlParaPres) --filter src/filters/paru-insert.rb
 
-## HTML
-: rootConf.yml README.md |> $(pandocBinary) -t html5 --standalone -f markdown %f -o %o --highlight-style kate --slide-level 2 |> doc/html/index.html
 
 ## TeX
 # : rootConf.yml README.md |> $(pandocBinary) --pdf-engine=xelatex --from markdown --template eisvogel -N --filter pandoc-eqnos --filter pandoc-fignos -f markdown %f -o %o --highlight-style kate |> src/tex/docu.tex
-# : src/tex/docu.tex |> latexmk -f %f -r src/tex/.latexmkrc -outdir=doc -silent && latexmk -c %f -r src/tex/.latexmkrc -outdir=doc -silent |> doc/%B.pdf
+# : src/tex/docu.tex |> latexmk -f %f -r src/tex/.latexmkrc -outdir=doc -silent && latexmk -c %f -r src/tex/.latexmkrc -outdir=doc -silent |> docs/%B.pdf
 
 # The presentations
 
@@ -68,3 +66,24 @@ htmlParaPres=--mathjax $(paraPres)
   latexmk %f -r src/tex/.latexmkrc -outdir=$(beamerOut) -silent && \
   latexmk -c %f -r src/tex/.latexmkrc -outdir=$(beamerOut) -silent \
   |> $(beamerOut)/%B.pdf
+
+
+# Docs
+
+## html
+
+### css
+: src/scss/main.scss |> sassc %f %o |> docs/css/zenYoda.css
+
+### JS
+: src/js/sideNav.js |> mkdir -p docs/js && cp %f docs/js/main.js |> docs/js/main.js
+
+### html
+: $(beamerOut)/*.pdf $(htmlPresOut)/*.html \
+|> cp -r dist/pres docs/ |> docs/pres/html/testReveal.html docs/pres/html/testSlidy.html \
+docs/pres/html/testSlideous.html docs/pres/html/testDZ.html docs/pres/html/testS5.html \
+docs/pres/beamer/testPres.pdf
+: src/docuConf.yml src/md/docu/docu.md \
+| docs/css/zenYoda.css docs/js/main.js \
+|> $(pandocBinary) -t html5 $(htmlParaDoc) %f -o %o \
+|> docs/index.html
