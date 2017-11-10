@@ -17,7 +17,7 @@
 
 # Variables
 # Pandoc location
-pandocBinary=$HOME/.local/bin/pandoc
+#pandocBinary=$HOME/.local/bin/pandoc
 ## Output Directories
 ### Beamer
 beamerOut=dist/pres/beamer
@@ -35,32 +35,32 @@ htmlParaDoc= $(htmlParaPres) --filter src/filters/panfluteInc.py --filter src/fi
 
 
 ## TeX
-# : rootConf.yml README.md |> $(pandocBinary) --pdf-engine=xelatex --from markdown --template eisvogel -N --filter pandoc-eqnos --filter pandoc-fignos -f markdown %f -o %o --highlight-style kate |> src/tex/docu.tex
+# : rootConf.yml README.md |> pandoc --pdf-engine=xelatex --from markdown --template eisvogel -N --filter pandoc-eqnos --filter pandoc-fignos -f markdown %f -o %o --highlight-style kate |> src/tex/docu.tex
 # : src/tex/docu.tex |> latexmk -f %f -r src/tex/.latexmkrc -outdir=doc -silent && latexmk -c %f -r src/tex/.latexmkrc -outdir=doc -silent |> docs/%B.pdf
 
 # The presentations
 
 ## HTML
 : &(presConf) &(presInp)/*.md |> \
-  $(pandocBinary) -t revealjs $(htmlParaPres) %f -o %o \
+  pandoc -t revealjs $(htmlParaPres) %f -o %o \
   -V theme=black \
   |> $(htmlPresOut)/testReveal.html
 : &(presConf) &(presInp)/*.md |> \
-  $(pandocBinary) -t slidy $(htmlParaPres) %f -o %o\
+  pandoc -t slidy $(htmlParaPres) %f -o %o\
   |> $(htmlPresOut)/testSlidy.html
 : &(presConf) &(presInp)/*.md |> \
-  $(pandocBinary) -t slideous $(htmlParaPres) %f -o %o\
+  pandoc -t slideous $(htmlParaPres) %f -o %o\
   |> $(htmlPresOut)/testSlideous.html
 : &(presConf) &(presInp)/*.md |> \
-  $(pandocBinary) -t dzslides $(htmlParaPres) %f -o %o\
+  pandoc -t dzslides $(htmlParaPres) %f -o %o\
   |> $(htmlPresOut)/testDZ.html
 : &(presConf) &(presInp)/*.md |> \
-  $(pandocBinary) -t s5 $(htmlParaPres) %f -o %o\
+  pandoc -t s5 $(htmlParaPres) %f -o %o\
   |> $(htmlPresOut)/testS5.html
 
 ## TeX
 : &(presConf) &(presInp)/*.md |> \
-  $(pandocBinary) -t beamer $(paraPres) %f -o %o \
+  pandoc -t beamer $(paraPres) %f -o %o \
   |> $(texOut)/testPres.tex
 : $(texOut)/testPres.tex |> \
   latexmk %f -r src/tex/.latexmkrc -outdir=$(beamerOut) -silent && \
@@ -88,7 +88,7 @@ docs/pres/beamer/testPres.pdf
 #### Make Site
 : src/docuConf.yml src/md/docu/docu.md \
 | docs/css/zenYoda.css docs/js/main.js \
-|> $(pandocBinary) -t html5 $(htmlParaDoc) %f -o %o \
+|> pandoc -t html5 $(htmlParaDoc) %f -o %o \
 |> docs/index.html
 
 #### Deploy Site
