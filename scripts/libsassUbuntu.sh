@@ -4,7 +4,7 @@
 # From https://gist.github.com/edouard-lopez/503d40a5c1a49cf8ae87
 
 # Install dependencies
-apt-get install automake libtool 
+sudo apt-get install automake libtool 
 
 # Fetch sources
 git clone https://github.com/sass/libsass.git
