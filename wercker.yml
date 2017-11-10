@@ -4,7 +4,7 @@ build:
     steps:
       - script:
           name: get system packages
-          code: pacman --noconfirm -Syy npm tup pandoc pandoc-citeproc sassc 
+          code: pacman-key -r 753E0F1F && pacman-key --lsign-key 753E0F1F && pacman --noconfirm -Syy npm tup pandoc pandoc-citeproc sassc 
       - script:
           name: get python packages
           code: pip install --user panflute
