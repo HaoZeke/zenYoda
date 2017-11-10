@@ -16,8 +16,7 @@ before_install:
   - sudo chown root:$USER /etc/fuse.conf
 
 install:
-  - sudo yarn global add shx
-  - yarn install
+  - sudo yarn global add shx surge node-sass
   - sudo pip3 install panflute
 
 script:
