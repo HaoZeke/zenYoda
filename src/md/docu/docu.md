@@ -23,12 +23,17 @@ A [tup](http://gittup.org/tup/) driven pandoc based presentation engine.
 ## Presentations
 **zenYoda** was created to handle a variety of pandoc presentation formats.
 
+### Beamer
+**zenYoda** produces metropolis themed pdf presentations as seen [here](pres/beamer/testPres.pdf) .
+
 ### Reveal.js
 [Source](https://github.com/hakimel/reveal.js/)
+
 This may be viewed [here](pres/html/testReveal.html)
 
 ### DZSlides
 [Source](paulrouget.com/dzslides/)
+
 This may be viewed [here](pres/html/testDZ.html)
 
 <!-- ### S5
@@ -37,10 +42,9 @@ This may be viewed [here](pres/html/testS5.html)
  -->
 ### Slidy
 Pandoc also supports the [original Slidy](https://www.w3.org/Talks/Tools/Slidy2/Overview.html#(1)).
+
 This may be viewed [here](pres/html/testSlidy.html)
 
-### Beamer
-**zenYoda** produces metropolis themed pdf presentations as seen [here](pres/beamer/testPres.pdf) .
 </main>
 
 $include src/md/docu/footer.md
