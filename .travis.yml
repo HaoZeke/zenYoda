@@ -18,4 +18,6 @@ script:
   - tup
 
 deploy:
-  - surge docs/ zenyoda.surge.sh
+  provider: surge
+  project: ./docs/
+  domain: zenyoda.surge.sh
