@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """
 Replace $hLinks with a nav list of all headers;
 uses optional metadata value 'toc-depth'
