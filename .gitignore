@@ -226,3 +226,6 @@ src/tex/*.tex
 # temp
 dist/
 docs/
+
+# node
+node_modules/

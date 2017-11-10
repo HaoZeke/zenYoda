@@ -76,12 +76,12 @@ htmlParaDoc= $(htmlParaPres) --filter src/filters/panfluteInc.py --filter src/fi
 : src/scss/main.scss |> node-sass %f %o |> docs/css/zenYoda.css
 
 ### JS
-: src/js/sideNav.js |> mkdir -p docs/js && cp %f docs/js/main.js |> docs/js/main.js
+: src/js/sideNav.js |> shx mkdir -p docs/js && shx cp %f docs/js/main.js |> docs/js/main.js
 
 ### html
 #### Copy Dist
 : $(beamerOut)/*.pdf $(htmlPresOut)/*.html \
-|> cp -r dist/pres docs/ |> docs/pres/html/testReveal.html docs/pres/html/testSlidy.html \
+|> shx cp -r dist/pres docs/ |> docs/pres/html/testReveal.html docs/pres/html/testSlidy.html \
 docs/pres/html/testSlideous.html docs/pres/html/testDZ.html docs/pres/html/testS5.html \
 docs/pres/beamer/testPres.pdf
 
