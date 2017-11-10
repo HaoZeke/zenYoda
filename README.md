@@ -11,7 +11,7 @@ You'll need:-
 * tup
 * A full LaTeX distribution
 
-## Useage
+## Usage
 
 Simply clone the repo and start changing slideConf.yml and slides.md
 
@@ -34,13 +34,20 @@ This software is built on the following:
 
 - [Pandoc](https://github.com/jgm/pandoc)
 - [TeX](https://ctan.org/)
-- [Metropolis](https://github.com/matze/mtheme)
-- [Python 3](https://www.python.org/)
 - [tup](http://gittup.org/tup/index.html)
+- [Metropolis](https://github.com/matze/mtheme)
+- [latexmk](http://mg.readthedocs.io/latexmk.html)
 
-Additionally the following books and resources have been used (also mentioned in-code):
+Additionally, for the site the following tools were used:
 
-- 
+- [sassc](https://github.com/sass/sassc)
+- [paru](https://heerdebeer.org/Software/markdown/paru)
+
+The site is built with:
+
+- [Sass](http://sass-lang.com/)
+- [CSS Gird](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout)
+- [CSS Variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables)
 
 ## Contributions
 Pull requests welcome!
