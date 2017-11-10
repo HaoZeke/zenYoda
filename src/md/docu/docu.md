@@ -24,7 +24,7 @@ A [tup](http://gittup.org/tup/) driven pandoc based presentation engine.
 **zenYoda** was created to handle a variety of pandoc presentation formats.
 
 ### Beamer
-**zenYoda** produces metropolis themed pdf presentations as seen [here](pres/beamer/testPres.pdf) .
+**zenYoda** produces metropolis themed pdf presentations as seen [here](https://github.com/HaoZeke/zenYoda/blob/master/docs/pres/beamer/testPres.pdf) .
 
 ### Reveal.js
 [Source](https://github.com/hakimel/reveal.js/)
