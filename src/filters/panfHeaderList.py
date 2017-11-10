@@ -1,6 +1,7 @@
 """
 Replace $hLinks with a nav list of all headers;
 uses optional metadata value 'toc-depth'
+Based on discussions here: https://github.com/sergiocorreia/panflute/issues/73
 
 Copyright (C) 2017  Rohit Goswami <rohit1995@mail.ru>
 
