@@ -1,0 +1,186 @@
+// Sass Variables
+// $colorBackground: #27133f; (set by typography)
+$colorBackground: #fafafa;
+$colorText: #33474b;
+$fontSysUI: system-ui,
+'Segoe UI',
+Roboto,
+Helvetica,
+Arial,
+sans-serif,
+'Apple Color Emoji',
+'Segoe UI Emoji',
+'Segoe UI Symbol';
+$high-tide: 500px;
+$slicer-breakpoints: 0 400px 600px 800px 1050px;
+$slicer-breakpoint-names: 'xs' 's' 'm' 'l' 'xl';
+//colors
+$color_half_baked_approx: #88c0d0;
+$color_shadow_green_approx: #8fbcbb;
+
+// CSS Variables
+:root {
+  --navColSize: .05fr;
+  --navPercentSize: 5%;
+}
+
+body {
+  background-color: $colorBackground;
+  color: $colorText;
+  text-rendering: optimizeLegibility;
+}
+
+@supports not (display: grid) {
+  .grid {
+    margin: 0 auto;
+    max-width: 50em;
+  }
+}
+
+.mainGrid {
+  display: grid;
+  grid-gap: 0.85rem;
+  grid-template-columns: var(--navColSize) .9fr;
+  transition: all 1s;
+}
+
+.gridHead {
+  align-self: center;
+  justify-self: center;
+  transition: all 1s;
+}
+
+.gridNav {
+  // align-self: center;
+  grid-column: 1;
+  grid-row: 1 / 4;
+  order: 1;
+  // justify-self: center;
+  transition: all 1s;
+}
+
+.gridMenu {
+  order: 2;
+  grid-column: 1;
+  grid-row: 2 / 4;  // Making this span would prevent the slight scrolling with open nav bar from the top
+  transition: all 1s;
+
+  .showMenu {
+    background-color: darken($color_half_baked_approx, 10%);
+  }
+}
+
+
+.gridBody {
+  @include between('s', 'xl') {
+    max-width: 50vw;
+  }
+  align-self: center;
+  grid-column: 2;
+  grid-row: 2;
+  justify-self: center;
+  margin: 0 1.4em;
+  min-height: 100vh; // Heading Style
+  transition: all 1s;
+}
+
+.page {
+  footer {
+    align-self: center;
+    grid-column: 2;
+    grid-row: 3;
+    justify-self: center;
+    margin: .5rem;
+    padding: .25rem;
+  }
+}
+
+// Nav Styles
+.menu {
+  position: sticky;
+  top: 3em;
+  max-height: 80vh;
+  overflow-y: auto;
+
+  .navList {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+
+    .navItem {
+      flex: 1 1 auto;
+      padding: .6em;
+      font-size: 1.2em;
+    }
+  }
+
+  a {
+   color: white;
+   text-shadow: none;
+   background-image: none;
+   &:hover {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 1px, $color_half_baked_approx 1px, $color_half_baked_approx 2px, rgba(0, 0, 0, 0) 2px); 
+   }
+  }
+  &.closed {
+    display: none;
+  }
+}
+
+#toggle {
+  background-color: darken($color_shadow_green_approx, 10%);
+  height: 100%;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &.closed {
+    height: 100%;
+    //opacity: .3; // Change to get a colored overlay or 0 for transparency
+  }
+  transition: all .7s ease;
+  transition: all .3s;
+}
+
+// NavBurger
+// Burger menu button
+.burger {
+    color: white;
+    display: block;
+    font-size: 3em;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1em;
+    position: sticky;
+    top: 0;
+    transform: rotate(0deg);
+    transition: .3s ease-out;
+    cursor: pointer;
+
+    &::hover {
+      opacity: .5;
+    }
+  }
+
+.openBurger {
+  @include between('s','xl'){
+    color: black;
+    margin-left: 20%;
+  }
+  transform: rotate(224deg);
+}
+
+
+code.hasJax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+
+.subHead {
+  margin-top: -2.5em;
+  margin-bottom: .5em;
+}
