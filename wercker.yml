@@ -1,7 +1,14 @@
-box: mhart/alpine-node
+box: Eyenseo/latex-archlinux
 # Build definition
 build:
     steps:
+      - script:
+          name: get system packages
+          code: pacman -S yarn tup pandoc pandoc-citeproc sassc python 
+      - script:
+          name: get python packages
+          code: pip install --user panflute
+    after-steps:
         - script:
             name: install surge
             code: yarn global add surge
