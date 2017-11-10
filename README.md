@@ -45,7 +45,6 @@ Additionally, for the site the following tools were used:
 - [sassc](https://github.com/sass/sassc)
 - [node-sass](https://github.com/sass/node-sass)
 - [surge](http://surge.sh)
-- [paru](https://heerdebeer.org/Software/markdown/paru)
 - [panflute](http://scorreia.com/software/panflute/)
 
 The site is built with:
