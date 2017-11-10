@@ -31,7 +31,7 @@ texOut=src/tex
 # Common Parameters
 paraPres=--standalone -f markdown --highlight-style kate --slide-level 2
 htmlParaPres=--mathjax $(paraPres)
-htmlParaDoc= $(htmlParaPres) --filter src/filters/panfluteInc.py
+htmlParaDoc= $(htmlParaPres) --filter src/filters/panfluteInc.py --filter src/filters/panfHeaderList.py
 
 
 ## TeX

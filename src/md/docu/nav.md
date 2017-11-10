@@ -16,6 +16,9 @@
 :::: {.navItem}
 [Presentations](#presentations)
 ::::
+
+$hLinks
+
 <!-- navList -->
 ::::
 <!-- menu closed -->

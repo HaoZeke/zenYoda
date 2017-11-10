@@ -1,4 +1,4 @@
-box: haozeke/docker_zenyodaarchlinux
+box: haozeke/zenyoda_archlinux
 # Build definition
 build:
     steps:
@@ -6,9 +6,6 @@ build:
           name: build targets
           code: tup
     after-steps:
-        - script:
-            name: install surge
-            code: yarn global add surge
         - script:
             name: deploy to surge
             code: |
