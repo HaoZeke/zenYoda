@@ -63,8 +63,8 @@ htmlParaDoc= $(htmlParaPres) --filter src/filters/panfluteInc.py --filter src/fi
   pandoc -t beamer $(paraPres) %f -o %o \
   |> $(texOut)/testPres.tex
 : $(texOut)/testPres.tex |> \
-  latexmk %f -r src/tex/.latexmkrc -outdir=$(beamerOut) -f && \
-  latexmk -c %f -r src/tex/.latexmkrc -outdir=$(beamerOut) -f \
+  latexmk %f -r src/tex/.latexmkrc -outdir=$(beamerOut) -silent && \
+  latexmk -c %f -r src/tex/.latexmkrc -outdir=$(beamerOut) -silent \
   |> $(beamerOut)/%B.pdf
 
 
