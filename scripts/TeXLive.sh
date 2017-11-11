@@ -34,7 +34,7 @@ tlmgr install   \
   stmaryrd      \
   biber         \
   beamer        \
-  xelatex       \
+  xetex         \
   pdflatex      \
   latexmk       \
   beamertheme-metropolis \
