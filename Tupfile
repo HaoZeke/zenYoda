@@ -96,11 +96,11 @@ docs/pres/beamer/testPres.pdf
 |> docs/%B.html
 
 : src/img/*.png \
-|> shx cp %f docs/img \
-|> docs/img/turtle.png
+|> imagemin %f --out-dir=docs/img \
+|> docs/img/%b
 
 : foreach src/img/favicons/*.* \
-|> shx cp %f docs/ \
+|> imagemin %f --out-dir=docs/ \
 |> docs/%b 
 
 #### Deploy Site
