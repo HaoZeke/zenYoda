@@ -91,6 +91,18 @@ docs/pres/beamer/testPres.pdf
 |> pandoc -t html5 $(htmlParaDoc) %f -o %o \
 |> docs/index.html
 
+: foreach src/md/docu/*.md \
+|> pandoc -t html5 $(htmlParaDoc) src/docuConf.yml %f -o %o \
+|> docs/%B.html
+
+: src/img/*.png \
+|> shx cp %f docs/img \
+|> docs/img/turtle.png
+
+: foreach src/img/favicons/*.* \
+|> shx cp %f docs/ \
+|> docs/%b 
+
 #### Deploy Site
 # export DEPLOY
 # ifeq (${DEPLOY},y)

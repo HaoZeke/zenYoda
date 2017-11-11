@@ -1,4 +1,4 @@
-$include src/md/docu/head.md
+$include src/md/docu/partials/head.md
 
 :::: {.mainGrid .page}
 
@@ -6,7 +6,7 @@ $include src/md/docu/head.md
 # zenYoda
 ::::
 
-$include src/md/docu/nav.md
+$include src/md/docu/partials/nav.md
 
 <main class="gridBody">
 
@@ -14,6 +14,10 @@ $include src/md/docu/nav.md
 
 :::: {.subHead}
 ### Pandoc For Turtles
+::::
+
+:::: {.mascot}
+![](img/turtle.png "zenYoda")
 ::::
 
 A [tup](http://gittup.org/tup/) driven pandoc based presentation engine.
@@ -45,9 +49,20 @@ Pandoc also supports the [original Slidy](https://www.w3.org/Talks/Tools/Slidy2/
 
 This may be viewed [here](pres/html/testSlidy.html)
 
+# Installation
+
+**zenYoda** was developed completely on ArchLinux. However it is designed to be as cross-platform as possible and runs on:
+
+* Linux
+* Windows
+* Mac
+* Docker
+
+For more details visit the [installation page](install.md).
+
 </main>
 
-$include src/md/docu/footer.md
+$include src/md/docu/partials/footer.md
 
 <!-- Ending page and mainGrid -->
 ::::

@@ -74,6 +74,11 @@ body {
 .gridBody {
   @include between('s', 'xl') {
     max-width: 50vw;
+    .mascot {
+      img {
+        width: 50%;
+      }
+    }
   }
   align-self: center;
   grid-column: 2;
@@ -84,6 +89,7 @@ body {
   transition: all 1s;
 }
 
+
 .page {
   footer {
     align-self: center;
@@ -92,6 +98,14 @@ body {
     justify-self: center;
     margin: .5rem;
     padding: .25rem;
+    
+    blockquote {
+      margin-right: auto;
+      margin-left: auto;
+      max-width: 40vw;
+      font-size: smaller;
+      font-style: unset;
+    }
   }
 }
 
