@@ -20,8 +20,6 @@ install:
   - sudo yarn global add shx surge node-sass
   - sudo pip3 install panflute
   - sudo pip install panflute
-  - tlmgr init-usertree
-  - sudo tlmgr update --all
   - sudo tlmgr install beamertheme-metropolis 
 
 script:
