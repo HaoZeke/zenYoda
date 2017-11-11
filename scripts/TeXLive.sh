@@ -25,6 +25,7 @@ fi
 # Just including texlua so the cache check above works
 # Needed for any use of texlua even if not testing LuaTeX
 tlmgr install luatex
+tlmgr install scheme-full
 
 # Other contrib packages: done as a block to avoid multiple calls to tlmgr
 # texlive-latex-base is needed to run pdflatex
@@ -38,7 +39,7 @@ tlmgr install   \
   pdflatex      \
   latexmk       \
   etoolbox      \
-  scheme-full   \
+  lmodern       \
   beamertheme-metropolis \
   amsmath
 
