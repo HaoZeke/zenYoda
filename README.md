@@ -55,6 +55,7 @@ The site is built with:
 - [Sass](http://sass-lang.com/)
 - [CSS Gird](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout)
 - [CSS Variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables)
+- [Travis CI](https://travis-ci.org)
 
 ## Contributions
 Pull requests welcome!
