@@ -32,7 +32,7 @@ def prepare(doc):
 def action(elem, doc):
     if isinstance(elem, Header) and elem.level <= doc.depth:
         plain = stringify(elem)
-        item = Link(*elem.content,url="#"+stringify(elem))
+        item = Link(*elem.content,url="#"+stringify(elem).replace(" ", "-").lower())
         doc.hLinks.append(item)
 
 
