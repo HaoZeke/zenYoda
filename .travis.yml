@@ -11,7 +11,7 @@ before_install:
   - sudo apt-get install --allow-unauthenticated -y -qq xzdec nodejs yarn pkg-config fuse latexmk texlive-full tup wget python3 python3-pip git biber
   - wget https://github.com/jgm/pandoc/releases/download/2.0.1.1/pandoc-2.0.1.1-1-amd64.deb -O pand2.deb
   - sudo dpkg -i pand2.deb
-  - bash scripts/fira.sh
+  - bash scripts/beamerSetup.sh
   - sudo modprobe fuse
   - sudo chmod 666 /dev/fuse
   - sudo chown root:$USER /etc/fuse.conf
@@ -20,7 +20,6 @@ install:
   - sudo yarn global add shx surge node-sass
   - sudo pip3 install panflute
   - sudo pip install panflute
-  - sudo tlmgr install beamertheme-metropolis 
 
 script:
   - tup

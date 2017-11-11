@@ -12,3 +12,10 @@ sudo cp Fira*/WEB/*.ttf /usr/share/fonts/truetype/Fira/
 sudo cp Fira*/OTF/Fira* /usr/share/fonts/opentype/Fira/
 
 sudo fc-cache -fv
+
+cd $HOME
+
+git clone https://github.com/matze/mtheme.git
+cd mtheme
+make sty
+sudo make install
