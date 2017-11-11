@@ -38,6 +38,7 @@ tlmgr install   \
   pdflatex      \
   latexmk       \
   etoolbox      \
+  scheme-full   \
   beamertheme-metropolis \
   amsmath
 
