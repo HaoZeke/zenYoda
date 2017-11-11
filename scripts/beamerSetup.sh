@@ -15,7 +15,7 @@ sudo fc-cache -fv
 
 cd $HOME
 
-git clone https://github.com/matze/mtheme.git
-cd mtheme
-make sty
-sudo make install
+# git clone https://github.com/matze/mtheme.git
+# cd mtheme
+# make sty
+# sudo make install
