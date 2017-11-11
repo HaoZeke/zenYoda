@@ -20,7 +20,8 @@ wget https://github.com/scottkosty/install-tl-ubuntu/raw/master/install-tl-ubunt
 sudo ./install-tl-ubuntu
 source /etc/environment
 sudo source /etc/environment
-sudo tlmgr install beamertheme-metropolis
-sudo tlmgr install latexmk
-sudo tlmgr install biber
-sudo tlmgr install beamer
+cd /opt/texbin
+sudo ./tlmgr install beamertheme-metropolis
+sudo ./tlmgr install latexmk
+sudo ./tlmgr install biber
+sudo ./tlmgr install beamer
