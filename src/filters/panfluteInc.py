@@ -56,6 +56,11 @@ def action(elem, doc):
         # div = pf.Div(*new_elems, attributes={'source': fn})
         # return div
 
+    # Changes md links to html
+    if isinstance(elem, pf.Link) and elem.url.endswith('.md'):
+        elem.url = elem.url[:-3] + '.html'
+        return elem
+
 
 def main(doc=None):
     return pf.run_filter(action, doc=doc) 
