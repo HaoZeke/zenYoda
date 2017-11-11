@@ -4,8 +4,8 @@ language: shell
 # Attempt to cache TeX
 cache:
   directories:
-  - /usr/local/share/texmf
-  - /usr/share/texmf-dist
+    - /tmp/texlive
+    - $HOME/.texlive
 
 before_install:
   - sudo apt-add-repository 'deb http://ppa.launchpad.net/anatol/tup/ubuntu precise main'
@@ -17,7 +17,8 @@ before_install:
   - sudo apt-get install --allow-unauthenticated -y -qq xzdec nodejs yarn pkg-config fuse tup wget python3 python3-pip git
   - wget https://github.com/jgm/pandoc/releases/download/2.0.1.1/pandoc-2.0.1.1-1-amd64.deb -O pand2.deb
   - sudo dpkg -i pand2.deb
-  - bash scripts/beamerSetup.sh
+  - bash scripts/firaFonts.sh
+  - source ./scripts/TeXLive.sh
   - source /etc/environment
   - sudo modprobe fuse
   - sudo chmod 666 /dev/fuse
