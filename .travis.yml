@@ -20,6 +20,7 @@ before_install:
 install:
   - sudo yarn global add shx surge node-sass
   - sudo pip3 install panflute
+  - sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 10
 
 script:
   - tup
