@@ -4,8 +4,8 @@ language: shell
 # Attempt to cache TeX
 cache:
   directories:
-  - $(kpsewhich -var-value TEXMFLOCAL)
-  - $(kpsewhich -var-value TEXMFDIST)
+  - /usr/local/share/texmf
+  - /usr/share/texmf-dist
 
 before_install:
   - sudo apt-add-repository 'deb http://ppa.launchpad.net/anatol/tup/ubuntu precise main'
