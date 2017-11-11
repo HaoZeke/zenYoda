@@ -15,7 +15,10 @@ sudo fc-cache -fv
 
 cd $HOME
 
-# git clone https://github.com/matze/mtheme.git
-# cd mtheme
-# make sty
-# sudo make install
+wget https://github.com/scottkosty/install-tl-ubuntu/raw/master/install-tl-ubuntu && chmod +x ./install-tl-ubuntu
+
+sudo ./install-tl-ubuntu
+sudo tlmgr install beamertheme-metropolis
+sudo tlmgr install latexmk
+sudo tlmgr install biber
+sudo tlmgr install beamer
