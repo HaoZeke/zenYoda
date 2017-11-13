@@ -28,11 +28,14 @@ texOut=src/tex
 # Presentation inputs
 &presConf=src/slideConf.yml 
 &presInp=src/md/slides
+
+# Presentation Libraries
+&paraLibRJS=src/presFrameworks
+
 # Common Parameters
 paraPres=--standalone -f markdown --highlight-style kate --slide-level 2
 htmlParaPres=--mathjax $(paraPres)
 htmlParaDoc= $(htmlParaPres) --filter src/filters/panfluteInc.py --filter src/filters/panfHeaderList.py
-
 
 ## TeX
 # : rootConf.yml README.md |> pandoc --pdf-engine=xelatex --from markdown --template eisvogel -N --filter pandoc-eqnos --filter pandoc-fignos -f markdown %f -o %o --highlight-style kate |> src/tex/docu.tex
@@ -41,19 +44,98 @@ htmlParaDoc= $(htmlParaPres) --filter src/filters/panfluteInc.py --filter src/fi
 # The presentations
 
 ## HTML
-: &(presConf) &(presInp)/*.md |> \
-  pandoc -t revealjs $(htmlParaPres) %f -o %o \
-  -V theme=black \
-  |> $(htmlPresOut)/testReveal.html
+
+### RevealJS Libraries
+: foreach &(paraLibRJS)/revealJS/css/*.css  \
+|> shx cp %f %o \
+|> dist/pres/html/revealJS/css/%b
+
+: foreach &(paraLibRJS)/revealJS/css/theme/*.css  \
+|> shx cp %f %o \
+|> dist/pres/html/revealJS/css/theme/%b
+
+: foreach &(paraLibRJS)/revealJS/css/print/*.css  \
+|> shx cp %f %o \
+|> dist/pres/html/revealJS/css/print/%b
+
+: foreach &(paraLibRJS)/revealJS/js/*  \
+|> shx cp %f %o \
+|> dist/pres/html/revealJS/js/%b
+
+: foreach &(paraLibRJS)/revealJS/lib/js/*  \
+|> shx cp %f %o \
+|> dist/pres/html/revealJS/lib/js/%b
+
+: foreach &(paraLibRJS)/revealJS/lib/css/*  \
+|> shx cp %f %o \
+|> dist/pres/html/revealJS/lib/css/%b
+
+: foreach &(paraLibRJS)/revealJS/lib/font/source-sans-pro/*  \
+|> shx cp %f %o \
+|> dist/pres/html/revealJS/lib/font/source-sans-pro/%b
+
+: foreach &(paraLibRJS)/revealJS/lib/font/league-gothic/*  \
+|> shx cp %f %o \
+|> dist/pres/html/revealJS/lib/font/league-gothic/%b
+
+: foreach &(paraLibRJS)/revealJS/plugin/zoom-js/*  \
+|> shx cp %f %o \
+|> dist/pres/html/revealJS/plugin/zoom-js/%b
+
+: foreach &(paraLibRJS)/revealJS/plugin/search/*  \
+|> shx cp %f %o \
+|> dist/pres/html/revealJS/plugin/search/%b
+
+: foreach &(paraLibRJS)/revealJS/plugin/print-pdf/*  \
+|> shx cp %f %o \
+|> dist/pres/html/revealJS/plugin/print-pdf/%b
+
+: foreach &(paraLibRJS)/revealJS/plugin/notes-server/*  \
+|> shx cp %f %o \
+|> dist/pres/html/revealJS/plugin/notes-server/%b
+
+: foreach &(paraLibRJS)/revealJS/plugin/notes/*  \
+|> shx cp %f %o \
+|> dist/pres/html/revealJS/plugin/notes/%b
+
+: foreach &(paraLibRJS)/revealJS/plugin/math/*  \
+|> shx cp %f %o \
+|> dist/pres/html/revealJS/plugin/math/%b
+
+: foreach &(paraLibRJS)/revealJS/plugin/multiplex/*  \
+|> shx cp %f %o \
+|> dist/pres/html/revealJS/plugin/multiplex/%b
+
+: foreach &(paraLibRJS)/revealJS/plugin/markdown/*  \
+|> shx cp %f %o \
+|> dist/pres/html/revealJS/plugin/markdown/%b
+
+: foreach &(paraLibRJS)/revealJS/plugin/highlight/*  \
+|> shx cp %f %o \
+|> dist/pres/html/revealJS/plugin/highlight/%b
+
+### RevealJS Presentation
+: &(presConf) &(presInp)/*.md \
+|> pandoc -t revealjs $(htmlParaPres) %f -o %o \
+-V theme=black \
+|> $(htmlPresOut)/testReveal.html
+
+### Slidy
 : &(presConf) &(presInp)/*.md |> \
   pandoc -t slidy $(htmlParaPres) %f -o %o\
   |> $(htmlPresOut)/testSlidy.html
+
+### Slideous
 : &(presConf) &(presInp)/*.md |> \
   pandoc -t slideous $(htmlParaPres) %f -o %o\
   |> $(htmlPresOut)/testSlideous.html
+
+### DZ
 : &(presConf) &(presInp)/*.md |> \
   pandoc -t dzslides $(htmlParaPres) %f -o %o\
   |> $(htmlPresOut)/testDZ.html
+
+### S5
 : &(presConf) &(presInp)/*.md |> \
   pandoc -t s5 $(htmlParaPres) %f -o %o\
   |> $(htmlPresOut)/testS5.html
@@ -80,10 +162,82 @@ htmlParaDoc= $(htmlParaPres) --filter src/filters/panfluteInc.py --filter src/fi
 
 ### html
 #### Copy Dist
-: $(beamerOut)/*.pdf $(htmlPresOut)/*.html \
-|> shx cp -r dist/pres docs/ |> docs/pres/html/testReveal.html docs/pres/html/testSlidy.html \
-docs/pres/html/testSlideous.html docs/pres/html/testDZ.html docs/pres/html/testS5.html \
-docs/pres/beamer/testPres.pdf
+: foreach $(htmlPresOut)/*.html \
+|> shx cp %f %o \
+|> docs/pres/html/%b
+
+#### Copy revealJS
+: foreach &(paraLibRJS)/revealJS/css/*.css  \
+|> shx cp %f %o \
+|> docs/pres/html/revealJS/css/%b
+
+: foreach &(paraLibRJS)/revealJS/css/theme/*.css  \
+|> shx cp %f %o \
+|> docs/pres/html/revealJS/css/theme/%b
+
+: foreach &(paraLibRJS)/revealJS/css/print/*.css  \
+|> shx cp %f %o \
+|> docs/pres/html/revealJS/css/print/%b
+
+: foreach &(paraLibRJS)/revealJS/js/*  \
+|> shx cp %f %o \
+|> docs/pres/html/revealJS/js/%b
+
+: foreach &(paraLibRJS)/revealJS/lib/js/*  \
+|> shx cp %f %o \
+|> docs/pres/html/revealJS/lib/js/%b
+
+: foreach &(paraLibRJS)/revealJS/lib/css/*  \
+|> shx cp %f %o \
+|> docs/pres/html/revealJS/lib/css/%b
+
+: foreach &(paraLibRJS)/revealJS/lib/font/source-sans-pro/*  \
+|> shx cp %f %o \
+|> docs/pres/html/revealJS/lib/font/source-sans-pro/%b
+
+: foreach &(paraLibRJS)/revealJS/lib/font/league-gothic/*  \
+|> shx cp %f %o \
+|> docs/pres/html/revealJS/lib/font/league-gothic/%b
+
+: foreach &(paraLibRJS)/revealJS/plugin/zoom-js/*  \
+|> shx cp %f %o \
+|> docs/pres/html/revealJS/plugin/zoom-js/%b
+
+: foreach &(paraLibRJS)/revealJS/plugin/search/*  \
+|> shx cp %f %o \
+|> docs/pres/html/revealJS/plugin/search/%b
+
+: foreach &(paraLibRJS)/revealJS/plugin/print-pdf/*  \
+|> shx cp %f %o \
+|> docs/pres/html/revealJS/plugin/print-pdf/%b
+
+: foreach &(paraLibRJS)/revealJS/plugin/notes-server/*  \
+|> shx cp %f %o \
+|> docs/pres/html/revealJS/plugin/notes-server/%b
+
+: foreach &(paraLibRJS)/revealJS/plugin/notes/*  \
+|> shx cp %f %o \
+|> docs/pres/html/revealJS/plugin/notes/%b
+
+: foreach &(paraLibRJS)/revealJS/plugin/math/*  \
+|> shx cp %f %o \
+|> docs/pres/html/revealJS/plugin/math/%b
+
+: foreach &(paraLibRJS)/revealJS/plugin/multiplex/*  \
+|> shx cp %f %o \
+|> docs/pres/html/revealJS/plugin/multiplex/%b
+
+: foreach &(paraLibRJS)/revealJS/plugin/markdown/*  \
+|> shx cp %f %o \
+|> docs/pres/html/revealJS/plugin/markdown/%b
+
+: foreach &(paraLibRJS)/revealJS/plugin/highlight/*  \
+|> shx cp %f %o \
+|> docs/pres/html/revealJS/plugin/highlight/%b
+
+: foreach $(beamerOut)/*.pdf \
+|> shx cp %f %o \
+|> docs/pres/beamer/%b
 
 #### Make Site
 : src/docuConf.yml src/md/docu/docu.md \

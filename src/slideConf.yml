@@ -12,7 +12,7 @@ date: 2017-11-5
 subject: "CNT"
 tags: [Markdown, Example]
 # HTML Stuff
-revealjs-url: http://lab.hakim.se/reveal-js
+revealjs-url: revealJS
 # TeX Stuff
 header-includes:
     - \numberwithin{figure}{section}
