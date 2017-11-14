@@ -15,6 +15,8 @@ header-includes:
     - \numberwithin{equation}{section}
     - \numberwithin{table}{section}
     - \usepackage{FiraSans}
+    - <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109503488-1"></script>
+    - <script src="js/gAnalytics.js"></script>
 # Eisvogel Stuff
 titlepage: true
 titlepage-color: 06386e

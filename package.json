@@ -1,8 +1,0 @@
-{
-  "dependencies": {
-    "imagemin-cli": "^3.0.0",
-    "node-sass": "^4.6.1",
-    "shx": "^0.2.2",
-    "surge": "^0.19.0"
-  }
-}
