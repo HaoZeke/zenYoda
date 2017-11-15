@@ -2,12 +2,10 @@ cd $HOME/save
 
 if [ ! -f FiraFonts4106.zip ]; then
     aria2c "http://www.carrois.com/downloads/fira_4_1/FiraFonts4106.zip"
-    exit 0
 fi
 
 if [ ! -f FiraMonoFonts3206.zip ]; then
     aria2c "http://www.carrois.com/downloads/fira_mono_3_2/FiraMonoFonts3206.zip"
-    exit 0
 fi
 
 unzip -n FiraFonts4106.zip
