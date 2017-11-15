@@ -1,10 +1,10 @@
-cd /tmp
+cd $HOME/save
 
-sudo wget "http://www.carrois.com/downloads/fira_4_1/FiraFonts4106.zip"
-sudo wget "http://www.carrois.com/downloads/fira_mono_3_2/FiraMonoFonts3206.zip"
+aria2c --continue=true "http://www.carrois.com/downloads/fira_4_1/FiraFonts4106.zip"
+aria2c --continue=true "http://www.carrois.com/downloads/fira_mono_3_2/FiraMonoFonts3206.zip"
 
-sudo unzip FiraFonts4106.zip
-sudo unzip FiraMonoFonts3206.zip
+unzip -n FiraFonts4106.zip
+unzip -n FiraMonoFonts3206.zip
 
 sudo mkdir -p /usr/share/fonts/truetype/Fira
 sudo mkdir -p /usr/share/fonts/opentype/Fira
