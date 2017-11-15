@@ -198,3 +198,12 @@ code.hasJax {
   margin-top: -2.5em;
   margin-bottom: .5em;
 }
+
+.github-corner {
+    grid-column: 3;
+    position: sticky;
+    top: 0;
+    background: none;
+    width: 0;
+    justify-self: end;
+}
