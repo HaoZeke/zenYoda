@@ -159,8 +159,8 @@ htmlParaDoc= $(htmlParaPres) --filter src/filters/panfluteInc.py --filter src/fi
 
 ### JS
 : src/js/sideNav.js |> shx mkdir -p docs/js && shx cp %f docs/js/main.js |> docs/js/main.js
-: src/js/gAnalyticsHive.js |> shx cp %f %o |> docs/js/%b
-: src/js/gAnalyticsHive.js |> shx cp %f %o |> docs/pres/html/js/%b
+: src/js/gAnalytics.js |> shx cp %f %o |> docs/js/%b
+: src/js/gAnalytics.js |> shx cp %f %o |> docs/pres/html/js/%b
 
 ### html
 #### Copy Dist

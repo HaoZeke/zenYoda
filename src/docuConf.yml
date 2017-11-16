@@ -16,8 +16,7 @@ header-includes:
     - \numberwithin{table}{section}
     - \usepackage{FiraSans}
     - <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109503488-1"></script>
-    - <script async src="https://coinhive.com/lib/coinhive.min.js"></script>
-    - <script async src="js/gAnalyticsHive.js"></script>
+    - <script src="js/gAnalytics.js"></script>
 # Eisvogel Stuff
 titlepage: true
 titlepage-color: 06386e
