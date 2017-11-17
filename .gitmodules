@@ -1,3 +1,0 @@
-[submodule "src/presFrameworks/revealJS"]
-	path = src/presFrameworks/revealJS
-	url = https://github.com/hakimel/reveal.js.git
