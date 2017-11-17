@@ -1,0 +1,120 @@
+
+ // Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+// Include theme-specific fonts
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,500);
+
+// Colors used in the theme
+$codeBackground: #23241f;
+
+$backgroundColor: #039be5;
+
+// Main text
+$mainFont: "Roboto", sans-serif;
+$mainColor: #444;
+$mainBackgroundColor: #eee;
+
+// Headings
+$headingFont: "Roboto", sans-serif;
+$headingTextShadow: none;
+$heading1TextShadow: none;
+
+// Links
+$linkColor: #297183;
+$linkColorHover: lighten($linkColor, 30%);
+
+// Text selection
+$selectionBackgroundColor: #9CE3F4;
+$selectionColor: #fff;
+
+
+$card_padding: 20px;
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
+
+.reveal .slides.fixed-cards section{
+    height: 600px;
+}
+.reveal .slides.fixed-cards section.stack{
+    height: auto;
+}
+
+.reveal .slides section{
+    background-color: $mainBackgroundColor;
+
+    >* {
+        padding-left: $card_padding;
+        padding-right: $card_padding;
+    }
+
+    border-radius: 2px;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 1px 5px 0 rgba(0,0,0,0.12),0 3px 1px -2px rgba(0,0,0,0.2);
+
+    hr{
+        border: 1px solid darken($mainBackgroundColor, 10%);
+        padding: 0;
+    }
+
+
+    img{
+        background-color: $mainColor;
+        border: none;
+        box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 1px 5px 0 rgba(0,0,0,0.12),0 3px 1px -2px rgba(0,0,0,0.2);
+    }
+    img.raw{
+        background: none;
+        border: none;
+        box-shadow: none;
+    }
+
+    .full-width{
+        width: calc(100% + #{2 * $card_padding});
+        margin-left: -$card_padding;
+        max-width: none;
+        height: auto;
+    }
+
+    h1, h2, h3, h4, h5, h6{
+        text-transform: none;
+        font-weight: 500;
+        color: $mainColor;
+    }
+
+    h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child{
+        background-color: #546E7A;
+        color: $mainBackgroundColor;
+        margin-top: -$card_padding;
+        box-shadow: 0 3px 3px -2px rgba(0,0,0,0.15);
+        font-weight: 300;
+    }
+    h1:first-child:last-child, h2:first-child:last-child, h3:first-child:last-child, h4:first-child:last-child, h5:first-child:last-child{
+        margin-bottom: -$card_padding;
+        padding-bottom: $card_padding;
+    }
+
+    p {
+        font-weight: 300;
+        text-shadow: none;
+        code {
+            background-color: $codeBackground;
+            display: inline-block;
+            border-radius: 7px;
+        }
+    }
+    small code {
+        vertical-align: baseline;
+    }
+
+    pre{
+        width: 100%;
+        padding: 0;
+    }
+    pre:last-child{
+        margin-bottom: -$card_padding;
+    }
+}
