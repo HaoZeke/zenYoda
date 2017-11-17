@@ -13,6 +13,7 @@ subject: "CNT"
 tags: [Markdown, Example]
 # HTML Stuff
 revealjs-url: revealJS
+css: css/rjsOverrides.css
 # TeX Stuff
 header-includes:
     - \numberwithin{figure}{section}
