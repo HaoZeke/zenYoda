@@ -2,9 +2,13 @@
 
 > Copyright (C) 2017  Rohit Goswami <rohit1995@mail.ru>
 
-![](src/img/turtle.png "Pandoc for turtles")
+![](src/img/turtle.png "Pandoc Presentations for turtles")
 
-A tup driven pandoc engine.
+A tup driven pandoc presentation engine.
+
+To get started, grab the [starter template](http://zenyodasap.surge.sh/).
+
+For it's gulp driven counterpart for academic documents, refer to the sibling project, [docuYoda](http://docuyoda.surge.sh/) and it's [starter template](http://docuyodasap.surge.sh/).
 
 ## Requirements
 You'll need:-

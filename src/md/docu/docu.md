@@ -13,7 +13,7 @@ $include src/md/docu/partials/nav.md
 # Introduction
 
 :::: {.subHead}
-### Pandoc For Turtles
+### Pandoc Presentations For Turtles
 ::::
 
 :::: {.mascot}
@@ -21,6 +21,12 @@ $include src/md/docu/partials/nav.md
 ::::
 
 A [tup](http://gittup.org/tup/) driven pandoc based presentation engine.
+
+
+To get started, grab the [starter template](http://zenyodasap.surge.sh/).
+
+
+For it's gulp driven counterpart for academic documents, refer to the sibling project, [docuYoda](http://docuyoda.surge.sh/) and it's [starter template](http://docuyodasap.surge.sh/).
 
 # Use Cases
 
