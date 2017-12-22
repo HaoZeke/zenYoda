@@ -47,71 +47,71 @@ htmlParaDoc= $(htmlParaPres) --filter src/filters/panfluteInc.py --filter src/fi
 
 ### RevealJS Libraries
 : foreach &(paraLibRJS)/revealJS/css/*.css  \
-|> shx cp %f %o \
+|> yarn shx cp %f %o \
 |> dist/pres/html/revealJS/css/%b
 
 : foreach &(paraLibRJS)/revealJS/css/theme/*.css  \
-|> shx cp %f %o \
+|> yarn shx cp %f %o \
 |> dist/pres/html/revealJS/css/theme/%b
 
 : foreach &(paraLibRJS)/revealJS/css/print/*.css  \
-|> shx cp %f %o \
+|> yarn shx cp %f %o \
 |> dist/pres/html/revealJS/css/print/%b
 
 : foreach &(paraLibRJS)/revealJS/js/*  \
-|> shx cp %f %o \
+|> yarn shx cp %f %o \
 |> dist/pres/html/revealJS/js/%b
 
 : foreach &(paraLibRJS)/revealJS/lib/js/*  \
-|> shx cp %f %o \
+|> yarn shx cp %f %o \
 |> dist/pres/html/revealJS/lib/js/%b
 
 : foreach &(paraLibRJS)/revealJS/lib/css/*  \
-|> shx cp %f %o \
+|> yarn shx cp %f %o \
 |> dist/pres/html/revealJS/lib/css/%b
 
 : foreach &(paraLibRJS)/revealJS/lib/font/source-sans-pro/*  \
-|> shx cp %f %o \
+|> yarn shx cp %f %o \
 |> dist/pres/html/revealJS/lib/font/source-sans-pro/%b
 
 : foreach &(paraLibRJS)/revealJS/lib/font/league-gothic/*  \
-|> shx cp %f %o \
+|> yarn shx cp %f %o \
 |> dist/pres/html/revealJS/lib/font/league-gothic/%b
 
 : foreach &(paraLibRJS)/revealJS/plugin/zoom-js/*  \
-|> shx cp %f %o \
+|> yarn shx cp %f %o \
 |> dist/pres/html/revealJS/plugin/zoom-js/%b
 
 : foreach &(paraLibRJS)/revealJS/plugin/search/*  \
-|> shx cp %f %o \
+|> yarn shx cp %f %o \
 |> dist/pres/html/revealJS/plugin/search/%b
 
 : foreach &(paraLibRJS)/revealJS/plugin/print-pdf/*  \
-|> shx cp %f %o \
+|> yarn shx cp %f %o \
 |> dist/pres/html/revealJS/plugin/print-pdf/%b
 
 : foreach &(paraLibRJS)/revealJS/plugin/notes-server/*  \
-|> shx cp %f %o \
+|> yarn shx cp %f %o \
 |> dist/pres/html/revealJS/plugin/notes-server/%b
 
 : foreach &(paraLibRJS)/revealJS/plugin/notes/*  \
-|> shx cp %f %o \
+|> yarn shx cp %f %o \
 |> dist/pres/html/revealJS/plugin/notes/%b
 
 : foreach &(paraLibRJS)/revealJS/plugin/math/*  \
-|> shx cp %f %o \
+|> yarn shx cp %f %o \
 |> dist/pres/html/revealJS/plugin/math/%b
 
 : foreach &(paraLibRJS)/revealJS/plugin/multiplex/*  \
-|> shx cp %f %o \
+|> yarn shx cp %f %o \
 |> dist/pres/html/revealJS/plugin/multiplex/%b
 
 : foreach &(paraLibRJS)/revealJS/plugin/markdown/*  \
-|> shx cp %f %o \
+|> yarn shx cp %f %o \
 |> dist/pres/html/revealJS/plugin/markdown/%b
 
 : foreach &(paraLibRJS)/revealJS/plugin/highlight/*  \
-|> shx cp %f %o \
+|> yarn shx cp %f %o \
 |> dist/pres/html/revealJS/plugin/highlight/%b
 
 ### RevealJS Presentation
@@ -155,91 +155,91 @@ htmlParaDoc= $(htmlParaPres) --filter src/filters/panfluteInc.py --filter src/fi
 ## html
 
 ### css
-: src/scss/main.scss |> node-sass %f %o |> docs/css/zenYoda.css
-: src/scss/overrides.scss |> node-sass %f %o |> docs/pres/html/css/rjsOverrides.css
+: src/scss/main.scss |> yarn node-sass %f %o |> docs/css/zenYoda.css
+: src/scss/overrides.scss |> yarn node-sass %f %o |> docs/pres/html/css/rjsOverrides.css
 
 ### JS
-: src/js/sideNav.js |> shx mkdir -p docs/js && shx cp %f docs/js/main.js |> docs/js/main.js
-: src/js/gAnalyticsHive.js |> shx cp %f %o |> docs/js/%b
-: src/js/gAnalyticsHive.js |> shx cp %f %o |> docs/pres/html/js/%b
+: src/js/sideNav.js |> yarn shx mkdir -p docs/js && yarn shx cp %f docs/js/main.js |> docs/js/main.js
+: src/js/gAnalyticsHive.js |> yarn shx cp %f %o |> docs/js/%b
+: src/js/gAnalyticsHive.js |> yarn shx cp %f %o |> docs/pres/html/js/%b
 
 ### html
 #### Copy Dist
 : foreach $(htmlPresOut)/*.html \
-|> shx cp %f %o \
+|> yarn shx cp %f %o \
 |> docs/pres/html/%b
 
 #### Copy revealJS
 : foreach &(paraLibRJS)/revealJS/css/*.css  \
-|> shx cp %f %o \
+|> yarn shx cp %f %o \
 |> docs/pres/html/revealJS/css/%b
 
 : foreach &(paraLibRJS)/revealJS/css/theme/*.css  \
-|> shx cp %f %o \
+|> yarn shx cp %f %o \
 |> docs/pres/html/revealJS/css/theme/%b
 
 : foreach &(paraLibRJS)/revealJS/css/print/*.css  \
-|> shx cp %f %o \
+|> yarn shx cp %f %o \
 |> docs/pres/html/revealJS/css/print/%b
 
 : foreach &(paraLibRJS)/revealJS/js/*  \
-|> shx cp %f %o \
+|> yarn shx cp %f %o \
 |> docs/pres/html/revealJS/js/%b
 
 : foreach &(paraLibRJS)/revealJS/lib/js/*  \
-|> shx cp %f %o \
+|> yarn shx cp %f %o \
 |> docs/pres/html/revealJS/lib/js/%b
 
 : foreach &(paraLibRJS)/revealJS/lib/css/*  \
-|> shx cp %f %o \
+|> yarn shx cp %f %o \
 |> docs/pres/html/revealJS/lib/css/%b
 
 : foreach &(paraLibRJS)/revealJS/lib/font/source-sans-pro/*  \
-|> shx cp %f %o \
+|> yarn shx cp %f %o \
 |> docs/pres/html/revealJS/lib/font/source-sans-pro/%b
 
 : foreach &(paraLibRJS)/revealJS/lib/font/league-gothic/*  \
-|> shx cp %f %o \
+|> yarn shx cp %f %o \
 |> docs/pres/html/revealJS/lib/font/league-gothic/%b
 
 : foreach &(paraLibRJS)/revealJS/plugin/zoom-js/*  \
-|> shx cp %f %o \
+|> yarn shx cp %f %o \
 |> docs/pres/html/revealJS/plugin/zoom-js/%b
 
 : foreach &(paraLibRJS)/revealJS/plugin/search/*  \
-|> shx cp %f %o \
+|> yarn shx cp %f %o \
 |> docs/pres/html/revealJS/plugin/search/%b
 
 : foreach &(paraLibRJS)/revealJS/plugin/print-pdf/*  \
-|> shx cp %f %o \
+|> yarn shx cp %f %o \
 |> docs/pres/html/revealJS/plugin/print-pdf/%b
 
 : foreach &(paraLibRJS)/revealJS/plugin/notes-server/*  \
-|> shx cp %f %o \
+|> yarn shx cp %f %o \
 |> docs/pres/html/revealJS/plugin/notes-server/%b
 
 : foreach &(paraLibRJS)/revealJS/plugin/notes/*  \
-|> shx cp %f %o \
+|> yarn shx cp %f %o \
 |> docs/pres/html/revealJS/plugin/notes/%b
 
 : foreach &(paraLibRJS)/revealJS/plugin/math/*  \
-|> shx cp %f %o \
+|> yarn shx cp %f %o \
 |> docs/pres/html/revealJS/plugin/math/%b
 
 : foreach &(paraLibRJS)/revealJS/plugin/multiplex/*  \
-|> shx cp %f %o \
+|> yarn shx cp %f %o \
 |> docs/pres/html/revealJS/plugin/multiplex/%b
 
 : foreach &(paraLibRJS)/revealJS/plugin/markdown/*  \
-|> shx cp %f %o \
+|> yarn shx cp %f %o \
 |> docs/pres/html/revealJS/plugin/markdown/%b
 
 : foreach &(paraLibRJS)/revealJS/plugin/highlight/*  \
-|> shx cp %f %o \
+|> yarn shx cp %f %o \
 |> docs/pres/html/revealJS/plugin/highlight/%b
 
 : foreach $(beamerOut)/*.pdf \
-|> shx cp %f %o \
+|> yarn shx cp %f %o \
 |> docs/pres/beamer/%b
 
 #### Make Site
@@ -253,16 +253,16 @@ htmlParaDoc= $(htmlParaPres) --filter src/filters/panfluteInc.py --filter src/fi
 |> docs/%B.html
 
 : src/img/*.png \
-|> imagemin %f --out-dir=docs/img \
+|> yarn imagemin %f --out-dir=docs/img \
 |> docs/img/%b
 
 : foreach src/img/favicons/*.* \
-|> imagemin %f --out-dir=docs/ \
+|> yarn imagemin %f --out-dir=docs/ \
 |> docs/%b
 
 # Add keybase proof
 : src/keybase.txt \
-|> shx cp %f %o \
+|> yarn shx cp %f %o \
 |> docs/%b
 
 #### Deploy Site
