@@ -28,12 +28,12 @@ before_install:
   - sudo chown root:$USER /etc/fuse.conf
 
 install:
-  - sudo yarn global add shx surge node-sass imagemin-cli
+  - sudo yarn global add surge
   - sudo pip3 install panflute
   - sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 10
 
 script:
-  - tup
+  - yarn && tup
 
 # Since Travis has trouble with multiple deployments
 after_success:
