@@ -258,7 +258,12 @@ htmlParaDoc= $(htmlParaPres) --filter src/filters/panfluteInc.py --filter src/fi
 
 : foreach src/img/favicons/*.* \
 |> imagemin %f --out-dir=docs/ \
-|> docs/%b 
+|> docs/%b
+
+# Add keybase proof
+: src/keybase.txt \
+|> shx cp %f %o \
+|> docs/%b
 
 #### Deploy Site
 # export DEPLOY
