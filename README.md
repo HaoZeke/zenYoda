@@ -1,5 +1,7 @@
 # Zen Yoda  [![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg?style=for-the-badge)](https://www.paypal.me/HaoZeke/) [![Build Status](https://travis-ci.org/HaoZeke/zenYoda.svg?branch=master)](https://travis-ci.org/HaoZeke/zenYoda)  
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/HaoZeke/zenYoda.svg)](https://greenkeeper.io/)
+
 > Copyright (C) 2017  Rohit Goswami <rohit1995@mail.ru>
 
 ![](src/img/turtle.png "Pandoc Presentations for turtles")
