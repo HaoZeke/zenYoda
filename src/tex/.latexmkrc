@@ -7,15 +7,16 @@ $clean_ext = "bbl nav out snm vrb";
 
 #
 # MuPDF viewer settings (uncomment pdf_previewer)
+# DOES NOT WORK. JUST USE ZATHURA
 #
 
 # $pdf_previewer = 'mupdf';
 
 # If zero, check for a previously running previewer on the same file and update it.  If nonzero, always start a new previewer.
-$new_viewer_always = 0;
+#$new_viewer_always = 0;
 
 # How to make the PDF viewer update its display when the PDF file changes.  See the man page for a description of each method.
-$pdf_update_method = 2;
+#$pdf_update_method = 2;
 
 # When PDF update method 2 is used, the number of the Unix signal to send
-$pdf_update_signal = 'SIGHUP';
+#$pdf_update_signal = 'SIGHUP';
