@@ -8,4 +8,24 @@
 		max-height: 70vh;
 	}
 }
+    .columns {
+    display: flex;
 }
+    .column {
+    flex: 50%;
+    @media screen and (max-width: 600px) {
+    width: 100%;
+}
+}
+.smallText {
+    font-size: 0.7em;
+    }
+video {
+    width: 100%;
+    height: auto;
+}
+.references {
+    font-size: 0.5em;
+    }
+}
+
