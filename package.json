@@ -2,7 +2,7 @@
   "dependencies": {
     "imagemin": "^5.3.1",
     "imagemin-cli": "^3.0.0",
-    "node-sass": "^4.7.2",
+    "node-sass": "^4.14.0",
     "shx": "^0.3.0"
   }
 }
